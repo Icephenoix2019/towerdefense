@@ -610,11 +610,11 @@ tower.tesla = {
 tower.bank = {
     // Display
     baseOnTop: false,
-    color: [75, 119, 190],
+    color: [175, 175, 0],
     drawLine: false,
     length: 1.1,
     radius: 0.9,
-    secondary: [175, 175, 0],
+    secondary: [191, 191, 191],
     width: 0.3,
     // Misc
     name: 'bank',
@@ -623,8 +623,8 @@ tower.bank = {
     cooldownMax: 0,
     cooldownMin: 0,
     cost: 150,
-    damageMax: 100,
-    damageMin: 100,
+    damageMax: 1,
+    damageMin: 1,
     range: 1,
     type: 'None',
     // Methods
@@ -674,7 +674,7 @@ tower.bank = {
             cooldownMin: 60,
             cost: 300,
             range: 1,
-            type: 'none',
+            type: 'None',
             // Methods
             onHit: function(e) {
                 cash += 2
