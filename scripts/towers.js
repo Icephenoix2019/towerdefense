@@ -672,7 +672,7 @@ tower.bank = {
             // Stats
             cooldownMax: 100,
             cooldownMin: 60,
-            cost: 1000,
+            cost: 900,
             range: 1,
             type: 'None',
             // Methods
