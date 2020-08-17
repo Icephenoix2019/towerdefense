@@ -22,6 +22,7 @@ tower.gun = {
     cooldownMax: 18,
     cooldownMin: 8,
     cost: 25,
+    cashmade: 5,
     range: 3,
     // Upgrades
     upgrades: [
