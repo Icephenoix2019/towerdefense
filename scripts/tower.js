@@ -13,6 +13,7 @@ class Tower {
         this.secondary = [0, 0, 0]; // secondary color
         this.weight = 2;            // laser stroke weight
         this.width = 0.3;           // barrel width in tiles
+        this.cashmade = 0;          // makes this ammount of money every wave
 
         // Misc
         this.alive = true;
