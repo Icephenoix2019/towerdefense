@@ -606,3 +606,39 @@ tower.tesla = {
         }
     ]
 };
+
+tower.bank = {
+    // Display
+    color: [249, 191, 59],
+    length: 0.65,
+    radius: 0.9,
+    secondary: [149, 165, 166],
+    // Misc
+    name: 'bank',
+    title: 'Money Tower',
+    // Stats
+    cooldownMax: 18,
+    cooldownMin: 8,
+    cost: 25,
+    range: 3,
+    // Methods
+    onHit: function(e) {
+        var cash += 2
+    },
+    // Upgrades
+    upgrades: [
+        {
+            // Display
+            color: [249, 105, 14],
+            // Misc
+            name: 'machineGun',
+            title: 'Machine Gun',
+            // Stats
+            cooldownMax: 5,
+            cooldownMin: 0,
+            cost: 75,
+            damageMax: 10,
+            damageMin: 0
+        }
+    ]
+};
