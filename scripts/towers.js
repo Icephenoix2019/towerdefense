@@ -609,36 +609,76 @@ tower.tesla = {
 
 tower.bank = {
     // Display
-    color: [249, 191, 59],
-    length: 0.65,
+    baseOnTop: false,
+    color: [75, 119, 190],
+    drawLine: false,
+    length: 1.1,
     radius: 0.9,
-    secondary: [149, 165, 166],
+    secondary: [175, 175, 0],
+    width: 0.3,
     // Misc
     name: 'bank',
     title: 'Money Tower',
     // Stats
-    cooldownMax: 18,
-    cooldownMin: 8,
-    cost: 25,
-    range: 3,
+    cooldownMax: 0,
+    cooldownMin: 0,
+    cost: 150,
+    damageMax: 100,
+    damageMin: 100,
+    range: 1,
+    type: 'None',
     // Methods
+    drawBarrel: function() {
+        stroke(this.border);
+        fill(this.secondary);
+        var back = -this.length * ts / 2;
+        var side = this.width * ts / 2;
+        rect(back, -side, this.length * ts, this.width * ts);
+    },
+    onAim: function(e) {
+        this.attack(e);
+    },
     onHit: function(e) {
-        cash += 2
+        cash += 1
+    },
+    // Target correct enemy
+    target: function(entities) {
+        if (stopFiring) return;
+        entities = this.visible(entities);
+        if (entities.length === 0) return;
+        if (!this.canFire()) return;
+        this.resetCooldown();
+        noStroke();
+        fill(this.color[0], this.color[1], this.color[2], 127);
+        var r = this.range * 2 + 1;
+        ellipse(this.pos.x, this.pos.y, r * ts, r * ts);
+        for (var i = 0; i < entities.length; i++) {
+            this.onAim(entities[i]);
+        }
+    },
+    update() {
+        this.angle += PI / 60;
+        if (this.cd > 0) this.cd--;
     },
     // Upgrades
     upgrades: [
         {
             // Display
-            color: [249, 105, 14],
+            color: [255, 255, 0],
+            radius: 0.9,
             // Misc
-            name: 'machineGun',
-            title: 'Machine Gun',
+            name: 'money',
+            title: 'Money Tower +',
             // Stats
-            cooldownMax: 5,
-            cooldownMin: 0,
-            cost: 75,
-            damageMax: 10,
-            damageMin: 0
+            cooldownMax: 100,
+            cooldownMin: 60,
+            cost: 300,
+            range: 1,
+            type: 'none',
+            // Methods
+            onHit: function(e) {
+                cash += 2
+            }
         }
     ]
 };
