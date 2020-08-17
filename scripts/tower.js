@@ -92,6 +92,10 @@ class Tower {
         return rangeText(this.damageMin, this.damageMax);
     }
 
+    if (toWait && wcd === 0) {
+        cash = this.cashmade
+    }
+
     // Returns average cooldown in seconds
     getCooldown() {
         return (this.cooldownMin + this.cooldownMax) / 120;
