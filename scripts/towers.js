@@ -620,8 +620,8 @@ tower.bank = {
     name: 'bank',
     title: 'Money Tower',
     // Stats
-    cooldownMax: 0,
-    cooldownMin: 0,
+    cooldownMax: 120,
+    cooldownMin: 120,
     cost: 400,
     damageMax: 1,
     damageMin: 1,
