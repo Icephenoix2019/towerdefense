@@ -13,7 +13,6 @@ class Tower {
         this.secondary = [0, 0, 0]; // secondary color
         this.weight = 2;            // laser stroke weight
         this.width = 0.3;           // barrel width in tiles
-        this.cashmade = 0;          // makes this ammount of money every hit
 
         // Misc
         this.alive = true;
@@ -49,7 +48,6 @@ class Tower {
         e.dealDamage(damage, this.type);
         if (!muteSounds && sounds.hasOwnProperty(this.sound)) {
             sounds[this.sound].play();
-        var cash += this.cashmade;
         }
         this.onHit(e);
     }
