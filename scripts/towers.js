@@ -623,7 +623,7 @@ tower.bank = {
     range: 3,
     // Methods
     onHit: function(e) {
-        var cash += 2
+        cash += 2
     },
     // Upgrades
     upgrades: [
