@@ -129,6 +129,7 @@ class Tower {
     resetCooldown() {
         var cooldown = round(random(this.cooldownMin, this.cooldownMax));
         this.cd = cooldown;
+        cash += this.cashmade;
     }
 
     // Sell price
