@@ -280,7 +280,7 @@ function loadMap() {
     var name = document.getElementById('map').value;
 
     health = 40;
-    cash = 55;
+    cash = 210;
     
     if (name === 'custom' && custom) {
         // Grids
