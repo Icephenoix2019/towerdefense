@@ -623,8 +623,8 @@ tower.bank = {
     cooldownMax: 120,
     cooldownMin: 120,
     cost: 400,
-    damageMax: 1,
-    damageMin: 1,
+    damageMax: 0,
+    damageMin: 0,
     range: 1,
     type: 'None',
     // Methods
@@ -696,11 +696,11 @@ tower.fire = {
     name: 'fire',
     title: 'Fire Tower',
     // Stats
-    cooldownMax: 20,
-    cooldownMin: 20,
+    cooldownMax: 40,
+    cooldownMin: 40,
     cost: 40,
-    damageMax: 10,
-    damageMin: 5,
+    damageMax: 5,
+    damageMin: 2,
     range: 1,
     type: 'fire',
     // Methods
@@ -743,8 +743,8 @@ tower.fire = {
             name: 'ring',
             title: 'Ring of fire',
             // Stats
-            cooldownMax: 10,
-            cooldownMin: 10,
+            cooldownMax: 30,
+            cooldownMin: 30,
             cost: 150,
             range: 2,
             type: 'fire',
