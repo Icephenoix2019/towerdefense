@@ -682,3 +682,76 @@ tower.bank = {
         }
     ]
 };
+
+tower.fire = {
+    // Display
+    baseOnTop: false,
+    color: [255, 143, 0],
+    drawLine: false,
+    length: 1.1,
+    radius: 0.9,
+    secondary: [189, 195, 199],
+    width: 0.3,
+    // Misc
+    name: 'fire',
+    title: 'Fire Tower',
+    // Stats
+    cooldownMax: 20,
+    cooldownMin: 20,
+    cost: 40,
+    damageMax: 20,
+    damageMin: 10,
+    range: 1,
+    type: 'fire',
+    // Methods
+    drawBarrel: function() {
+        stroke(this.border);
+        fill(this.secondary);
+        var back = -this.length * ts / 2;
+        var side = this.width * ts / 2;
+        rect(back, -side, this.length * ts, this.width * ts);
+    },
+    onAim: function(e) {
+        this.attack(e);
+    },
+    // Target correct enemy
+    target: function(entities) {
+        if (stopFiring) return;
+        entities = this.visible(entities);
+        if (entities.length === 0) return;
+        if (!this.canFire()) return;
+        this.resetCooldown();
+        noStroke();
+        fill(this.color[0], this.color[1], this.color[2], 127);
+        var r = this.range * 2 + 1;
+        ellipse(this.pos.x, this.pos.y, r * ts, r * ts);
+        for (var i = 0; i < entities.length; i++) {
+            this.onAim(entities[i]);
+        }
+    },
+    update() {
+        this.angle += PI / 60;
+        if (this.cd > 0) this.cd--;
+    },
+    // Upgrades
+    upgrades: [
+        {
+            // Display
+            color: [255, 204, 0],
+            radius: 0.9,
+            // Misc
+            name: 'ring',
+            title: 'Ring of fire',
+            // Stats
+            cooldownMax: 10,
+            cooldownMin: 10,
+            cost: 150,
+            range: 2,
+            type: 'fire',
+            // Methods
+            onHit: function(e) {
+                e.applyEffect('fire', 60);
+            }
+        }
+    ]
+};
