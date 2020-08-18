@@ -51,3 +51,15 @@ effects.regen = {
         if (e.health < e.maxHealth && random() < 0.2) e.health++;
     }
 };
+
+effects.fire = {
+    // Display
+    color: [255, 204, 0],
+    // Misc
+    name: 'fire',
+    // Methods
+    onTick: function(e) {
+        e.dealDamage(1, 'fire');
+    }
+};
+
