@@ -699,8 +699,8 @@ tower.fire = {
     cooldownMax: 20,
     cooldownMin: 20,
     cost: 40,
-    damageMax: 20,
-    damageMin: 10,
+    damageMax: 10,
+    damageMin: 5,
     range: 1,
     type: 'fire',
     // Methods
