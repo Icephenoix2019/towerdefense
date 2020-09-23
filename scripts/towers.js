@@ -755,3 +755,57 @@ tower.fire = {
         }
     ]
 };
+
+tower.sniper = {
+    // Display
+    color: [50, 168, 82],
+    length: 0.65,
+    radius: 0.9,
+    secondary: [149, 165, 166],
+    // Misc
+    name: 'sniper',
+    title: 'Sniper Tower',
+    // Stats
+    cooldownMax: 50,
+    cooldownMin: 40,
+    cost: 50,
+    damageMax: 40,
+    damageMin: 10,
+    range: 8,
+    // Upgrades
+    upgrades: [
+        {
+            // Display
+            color: [21, 214, 74],
+            // Misc
+            name: 'railgun',
+            title: 'Railgun Gun',
+            // Stats
+            cooldownMax: 5,
+            cooldownMin: 0,
+            cost: 75,
+            damageMax: 80,
+            damageMin: 50,
+            // Methods
+            onHit: function(e) {
+               var blastRadius = 1;
+               var inRadius = getInRange(e.pos.x, e.pos.y, blastRadius, enemies);
+               noStroke();
+               fill(191, 85, 236, 127);
+               ellipse(e.pos.x, e.pos.y, ts * 2.5, ts * 2.5);
+               if (showEffects) {
+                  var s = new BombExplosion(e.pos.x, e.pos.y);
+                     for (var i = 0; i < particleAmt; i++) {
+                        s.addParticle();
+                     }
+                  systems.push(s);
+                }
+                for (var i = 0; i < inRadius.length; i++) {
+                    var h = inRadius[i];
+                    var amt = round(random(this.damageMin, this.damageMax));
+                    h.dealDamage(amt, this.type);
+        }
+    },
+        }
+    ]
+};
