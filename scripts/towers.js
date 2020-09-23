@@ -776,35 +776,18 @@ tower.gattling = {
             // Display
             color: [249, 105, 14],
             // Misc
-            name: 'overcharge',
-            title: 'Overcharged Gatling Gun +',
+            name: 'icygatling',
+            title: 'Icy Gatling Gun',
             // Stats
-            cooldownMax: 12,
-            cooldownMin: 8,
+            cooldownMax: 8,
+            cooldownMin: 1,
             cost: 210,
-            damageMax: 35,
-            damageMin: 18,
+            damageMax: 14,
+            damageMin: 2,
             //Methods
-                onHit: function(e) {
-                                var blastRadius = 1;
-                                var inRadius = getInRange(e.pos.x, e.pos.y, blastRadius, enemies);
-                                noStroke();
-                                fill(191, 85, 236, 127);
-                                ellipse(e.pos.x, e.pos.y, ts * 2.5, ts * 2.5);
-                                  if (showEffects) {
-                                      var s = new BombExplosion(e.pos.x, e.pos.y);
-                                     for (var i = 0; i < particleAmt; i++) {
-                                     s.addParticle();
-                                     }
-                                      systems.push(s);
-                                     }
-                                     for (var i = 0; i < inRadius.length; i++) {
-                                     var h = inRadius[i];
-                                     var amt = round(random(this.damageMin, this.damageMax));
-                                     h.dealDamage(amt, this.type);
-  
-                }
-            },
+                OnHit: function(e) {
+                e.applyEffect('slow', 10);
+            }
         }
     ]
 };
