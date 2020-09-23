@@ -756,56 +756,68 @@ tower.fire = {
     ]
 };
 
-tower.sniper = {
+tower.gattling = {
     // Display
-    color: [50, 168, 82],
+    color: [249, 191, 59],
     length: 0.65,
     radius: 0.9,
     secondary: [149, 165, 166],
     // Misc
-    name: 'sniper',
-    title: 'Sniper Tower',
+    name: 'gatling',
+    title: 'Gatling Gun Tower',
     // Stats
-    cooldownMax: 50,
-    cooldownMin: 40,
-    cost: 50,
-    damageMax: 40,
-    damageMin: 10,
-    range: 8,
+    cooldownMax: 8,
+    cooldownMin: 1,
+    cost: 80,
+    range: 4,
     // Upgrades
     upgrades: [
         {
             // Display
-            color: [21, 214, 74],
+            color: [249, 105, 14],
             // Misc
-            name: 'railgun',
-            title: 'Railgun Gun',
+            name: 'gatling+',
+            title: 'Gatling Gun +',
             // Stats
-            cooldownMax: 5,
-            cooldownMin: 0,
-            cost: 75,
-            damageMax: 80,
-            damageMin: 50,
-            // Methods
-            onHit: function(e) {
-               var blastRadius = 1;
-               var inRadius = getInRange(e.pos.x, e.pos.y, blastRadius, enemies);
-               noStroke();
-               fill(191, 85, 236, 127);
-               ellipse(e.pos.x, e.pos.y, ts * 2.5, ts * 2.5);
-               if (showEffects) {
-                  var s = new BombExplosion(e.pos.x, e.pos.y);
-                     for (var i = 0; i < particleAmt; i++) {
-                        s.addParticle();
-                     }
-                  systems.push(s);
-                }
-                for (var i = 0; i < inRadius.length; i++) {
-                    var h = inRadius[i];
-                    var amt = round(random(this.damageMin, this.damageMax));
-                    h.dealDamage(amt, this.type);
-        }
-    },
-        }
+            cooldownMax: 6,
+            cooldownMin: 1,
+            cost: 150,
+            damageMax: 20,
+            damageMin: 4,
+            // Upgrades
+            upgrades: [
+                       // Display
+                       color: [249, 105, 14],
+                       // Misc
+                       name: 'overcharge',
+                       title: 'Overcharged Gatling Gun',
+                       // Stats
+                       cooldownMax: 10,
+                       cooldownMin: 7,
+                       cost: 260,
+                       damageMax: 40,
+                       damageMin: 20,
+                       // Methods
+                           onHit: function(e) {
+                                var blastRadius = 1;
+                                var inRadius = getInRange(e.pos.x, e.pos.y, blastRadius, enemies);
+                                noStroke();
+                                fill(191, 85, 236, 127);
+                                ellipse(e.pos.x, e.pos.y, ts * 2.5, ts * 2.5);
+                                  if (showEffects) {
+                                      var s = new BombExplosion(e.pos.x, e.pos.y);
+                                     for (var i = 0; i < particleAmt; i++) {
+                                     s.addParticle();
+                                     }
+                                      systems.push(s);
+                                     }
+                                     for (var i = 0; i < inRadius.length; i++) {
+                                     var h = inRadius[i];
+                                     var amt = round(random(this.damageMin, this.damageMax));
+                                     h.dealDamage(amt, this.type);
+                    }
+                },
+            }
+        ]
     ]
 };
