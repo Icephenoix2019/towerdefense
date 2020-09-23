@@ -776,29 +776,16 @@ tower.gattling = {
             // Display
             color: [249, 105, 14],
             // Misc
-            name: 'gatling+',
-            title: 'Gatling Gun +',
+            name: 'overcharge',
+            title: 'Overcharged Gatling Gun +',
             // Stats
-            cooldownMax: 6,
-            cooldownMin: 1,
-            cost: 150,
-            damageMax: 20,
-            damageMin: 4,
-            // Upgrades
-            upgrades: [
-                       // Display
-                       color: [249, 105, 14],
-                       // Misc
-                       name: 'overcharge',
-                       title: 'Overcharged Gatling Gun',
-                       // Stats
-                       cooldownMax: 10,
-                       cooldownMin: 7,
-                       cost: 260,
-                       damageMax: 40,
-                       damageMin: 20,
-                       // Methods
-                           onHit: function(e) {
+            cooldownMax: 12,
+            cooldownMin: 8,
+            cost: 210,
+            damageMax: 35,
+            damageMin: 18,
+            //Methods
+                onHit: function(e) {
                                 var blastRadius = 1;
                                 var inRadius = getInRange(e.pos.x, e.pos.y, blastRadius, enemies);
                                 noStroke();
@@ -815,9 +802,9 @@ tower.gattling = {
                                      var h = inRadius[i];
                                      var amt = round(random(this.damageMin, this.damageMax));
                                      h.dealDamage(amt, this.type);
-                    }
-                },
-            }
-        ]
+  
+                }
+            },
+        }
     ]
 };
