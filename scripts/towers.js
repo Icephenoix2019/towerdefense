@@ -756,7 +756,7 @@ tower.fire = {
     ]
 };
 
-tower.gattling = {
+tower.gatling = {
     // Display
     color: [249, 191, 59],
     length: 0.65,
