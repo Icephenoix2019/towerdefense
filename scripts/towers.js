@@ -786,7 +786,7 @@ tower.gatling = {
             damageMin: 2,
             //Methods
                 OnHit: function(e) {
-                e.applyEffect('slow', 10);
+                e.applyEffect('slow', 40);
             }
         }
     ]
