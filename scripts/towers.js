@@ -745,13 +745,30 @@ tower.fire = {
             // Stats
             cooldownMax: 30,
             cooldownMin: 30,
-            cost: 150,
-            range: 2,
+            cost: 200,
+            range: 1.2,
             type: 'fire',
             // Methods
             onHit: function(e) {
                 e.applyEffect('fire', 60);
             }
+        },
+        {
+            // Display
+            color: [198, 0, 0],
+            radius: 0.9,
+            // Misc
+            name: 'magma',
+            title: 'Magma Tower',
+            secondary: [50, 50, 50],
+            // Stats
+            cooldownMax: 45,
+            cooldownMin: 45,
+            damageMax: 15,
+            damageMin: 8,
+            cost: 150,
+            range: 2,
+            type: 'fire',
         }
     ]
 };
@@ -818,3 +835,55 @@ tower.gatling = {
         }
     ]
 };
+
+tower.random = {
+    // Display
+    color: [0, 180, 0],
+    length: 0.3,
+    radius: 0.6,
+    secondary: [149, 165, 166],
+    // Misc
+    name: 'random',
+    title: 'Random Tower',
+    // Stats
+    cooldownMax: 18,
+    cooldownMin: 8,
+    damageMax: 100,
+    damageMin: 0,
+    cost: 80,
+    range: 2.5,
+    // Upgrades
+    upgrades: [
+        {
+            // Display
+            color: [0, 255, 0],
+            // Misc
+            name: 'lucky',
+            length: 0.5,
+            radius: 0.8,
+            title: 'Lucky Tower',
+            // Stats
+            cooldownMax: 18,
+            cooldownMin: 8,
+            cost: 300,
+            damageMax: 100,
+            damageMin: 20,
+        },
+        {
+            // Display
+            color: [121, 214, 28],
+            // Misc
+            name: 'superrandom',
+            length: 0.5,
+            radius: 0.8,
+            title: 'Super Random Tower',
+            // Stats
+            cooldownMax: 17,
+            cooldownMin: 7,
+            cost: 700,
+            damageMax: 160,
+            damageMin: 0,
+        },
+    ]
+};
+
