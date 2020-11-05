@@ -27,6 +27,19 @@ tower.gun = {
     upgrades: [
         {
             // Display
+            color: [255, 215, 125],
+            // Misc
+            name: 'gunplus',
+            title: 'Gun Plus',
+            // Stats
+            cooldownMax: 10,
+            cooldownMin: 4,
+            cost: 100,
+            damageMax: 15,
+            damageMin: 6
+        },
+        }
+            // Display
             color: [249, 105, 14],
             // Misc
             name: 'machineGun',
@@ -34,7 +47,7 @@ tower.gun = {
             // Stats
             cooldownMax: 5,
             cooldownMin: 0,
-            cost: 75,
+            cost: 80,
             damageMax: 10,
             damageMin: 0
         }
@@ -89,6 +102,23 @@ tower.laser = {
                 var damage = d * sq(this.duration);
                 e.dealDamage(damage, this.type);
                 this.onHit(e);
+            },
+                color: [180, 0, 0],
+                length: 0.65,
+                radius: 0.9,
+                secondary: [255, 0, 0],
+                weight: 3,
+                width: 0.35,
+                // Misc
+                name: 'laser',
+                title: 'Laser Turret',
+                // Stats
+                cooldownMax: 160,
+                cooldownMin: 90,
+                cost: 200,
+                damageMax: 0.1,
+                damageMin: 0.001,
+                range: 2
             }
         }
     ]
