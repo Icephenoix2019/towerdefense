@@ -746,6 +746,7 @@ tower.fire = {
             cooldownMax: 30,
             cooldownMin: 30,
             cost: 200,
+            type: 'fire',
             range: 1.2,
             // Methods
             onHit: function(e) {
@@ -766,6 +767,7 @@ tower.fire = {
             damageMax: 15,
             damageMin: 8,
             cost: 150,
+            type: 'fire',
             range: 2
         }
     ]
@@ -799,6 +801,7 @@ tower.gatling = {
             cost: 445,
             damageMax: 18,
             damageMin: 4,
+            type: 'fire',
             //Methods
                 OnHit: function(e) {
                 e.applyEffect('fire', 20);
@@ -815,21 +818,9 @@ tower.gatling = {
             cooldownMin: 4,
             cost: 240,
             damageMax: 10,
-            damageMin: 5
+            damageMin: 5,
+            type: 'energy'
             //Methods
-            attack: function(e) {
-                if (this.lastTarget === e) {
-                    this.duration++;
-                } else {
-                    this.lastTarget = e;
-                    this.duration = 0;
-                }
-                //var damage = this.damageMin * pow(2, this.duration);
-                var d = random(this.damageMin, this.damageMax);
-                var damage = d * sq(this.duration);
-                e.dealDamage(damage, this.type);
-                this.onHit(e);
-            }
         }
     ]
 };
