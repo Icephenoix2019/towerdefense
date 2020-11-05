@@ -798,7 +798,7 @@ tower.gatling = {
             // Stats
             cooldownMax: 12,
             cooldownMin: 4,
-            cost: 210,
+            cost: 160,
             damageMax: 14,
             damageMin: 2
         }
