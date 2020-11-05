@@ -36,9 +36,9 @@ tower.gun = {
             cooldownMin: 4,
             cost: 100,
             damageMax: 15,
-            damageMin: 6
+            damageMin: 6,
         },
-        }
+        {
             // Display
             color: [249, 105, 14],
             // Misc
