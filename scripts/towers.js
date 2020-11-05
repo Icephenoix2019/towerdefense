@@ -882,7 +882,7 @@ tower.random = {
             cooldownMin: 7,
             cost: 700,
             damageMax: 160,
-            damageMin: 0,
+            damageMin: 0
         }
     ]
 };
