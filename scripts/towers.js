@@ -110,14 +110,13 @@ tower.laser = {
                 weight: 3,
                 width: 0.35,
                 // Misc
-                name: 'laser',
-                title: 'Laser Turret',
+                name: 'laserPlus',
+                title: 'Laser Plus',
                 // Stats
-                cooldownMax: 160,
-                cooldownMin: 90,
-                cost: 200,
-                damageMax: 0.1,
-                damageMin: 0.001,
+                cooldownMax: 1,
+                cost: 150,
+                damageMax: 5,
+                damageMin: 3,
                 range: 2
             }
         }
