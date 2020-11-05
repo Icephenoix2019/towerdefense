@@ -90,7 +90,7 @@ aside {
 
 #store button, #map-aside button {
     color: #000;
-    min-width: 50%;
+    min-width: 100%;
     text-align: center;
     text-shadow: none;
 }
@@ -128,7 +128,8 @@ button {
 .horiz-buttons {
     display: flex;
     flex-direction: row;
-    min-width: 100%;
+    min-width: 50%;
+    min-height: 50%;
 }
 
 .horiz-buttons button {
