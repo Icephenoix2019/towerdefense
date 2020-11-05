@@ -776,31 +776,45 @@ tower.gatling = {
             // Display
             color: [249, 105, 14],
             // Misc
-            name: 'icygatling',
-            title: 'Icy Gatling Gun',
+            name: 'blazinggatling',
+            title: 'Blazing Gatling Gun',
             // Stats
             cooldownMax: 8,
             cooldownMin: 1,
-            cost: 210,
-            damageMax: 10,
-            damageMin: 2,
+            cost: 445,
+            damageMax: 18,
+            damageMin: 4,
             //Methods
                 OnHit: function(e) {
-                e.applyEffect('slow', 40);
+                e.applyEffect('fire', 20);
             }
         },
         {
             // Display
-            color: [249, 105, 14],
+            color: [255, 255, 0],
             // Misc
             name: 'pulsegatling',
             title: 'Pulse Gatling Gun',
             // Stats
             cooldownMax: 12,
             cooldownMin: 4,
-            cost: 160,
-            damageMax: 14,
-            damageMin: 2
+            cost: 240,
+            damageMax: 10,
+            damageMin: 5
+            //Methods
+            attack: function(e) {
+                if (this.lastTarget === e) {
+                    this.duration++;
+                } else {
+                    this.lastTarget = e;
+                    this.duration = 0;
+                }
+                //var damage = this.damageMin * pow(2, this.duration);
+                var d = random(this.damageMin, this.damageMax);
+                var damage = d * sq(this.duration);
+                e.dealDamage(damage, this.type);
+                this.onHit(e);
+            }
         }
     ]
 };
