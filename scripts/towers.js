@@ -747,7 +747,6 @@ tower.fire = {
             cooldownMin: 30,
             cost: 200,
             range: 1.2,
-            type: 'fire',
             // Methods
             onHit: function(e) {
                 e.applyEffect('fire', 60);
@@ -767,8 +766,7 @@ tower.fire = {
             damageMax: 15,
             damageMin: 8,
             cost: 150,
-            range: 2,
-            type: 'fire',
+            range: 2
         }
     ]
 };
