@@ -782,12 +782,25 @@ tower.gatling = {
             cooldownMax: 8,
             cooldownMin: 1,
             cost: 210,
-            damageMax: 14,
+            damageMax: 10,
             damageMin: 2,
             //Methods
                 OnHit: function(e) {
                 e.applyEffect('slow', 40);
             }
+        },
+        {
+            // Display
+            color: [249, 105, 14],
+            // Misc
+            name: 'pulsegatling',
+            title: 'Pulse Gatling Gun',
+            // Stats
+            cooldownMax: 12,
+            cooldownMin: 4,
+            cost: 210,
+            damageMax: 14,
+            damageMin: 2
         }
     ]
 };
