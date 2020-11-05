@@ -103,6 +103,8 @@ tower.laser = {
                 e.dealDamage(damage, this.type);
                 this.onHit(e);
             },
+        }
+            {
                 color: [180, 0, 0],
                 length: 0.65,
                 radius: 0.9,
@@ -118,8 +120,7 @@ tower.laser = {
                 damageMax: 5,
                 damageMin: 3,
                 range: 2
-            }
-        }
+         }
     ]
 };
 
