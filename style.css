@@ -129,7 +129,6 @@ button {
     display: flex;
     flex-direction: row;
     min-width: 50%;
-    min-height: 50%;
 }
 
 .horiz-buttons button {
