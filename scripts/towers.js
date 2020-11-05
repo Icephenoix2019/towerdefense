@@ -103,7 +103,7 @@ tower.laser = {
                 e.dealDamage(damage, this.type);
                 this.onHit(e);
             },
-        }
+        },
             {
                 color: [180, 0, 0],
                 length: 0.65,
