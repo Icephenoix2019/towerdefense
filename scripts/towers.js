@@ -883,7 +883,7 @@ tower.random = {
             cost: 700,
             damageMax: 160,
             damageMin: 0,
-        },
+        }
     ]
 };
 
