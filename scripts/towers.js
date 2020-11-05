@@ -781,7 +781,7 @@ tower.fire = {
             // Methods
             onHit: function(e) {
                 e.applyEffect('fire', 60);
-            }
+            },
         },
         {
             // Display
@@ -835,7 +835,7 @@ tower.gatling = {
             //Methods
                 OnHit: function(e) {
                 e.applyEffect('fire', 20);
-            }
+            },
         },
         {
             // Display
