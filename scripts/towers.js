@@ -825,20 +825,20 @@ tower.gatling = {
     ]
 };
 
-tower.random = {
+tower.randomizer = {
     // Display
     color: [0, 180, 0],
     length: 0.3,
     radius: 0.6,
     secondary: [149, 165, 166],
     // Misc
-    name: 'random',
-    title: 'Random Tower',
+    name: 'randomizer',
+    title: 'Randomizer Tower',
     // Stats
     cooldownMax: 18,
     cooldownMin: 8,
     damageMax: 100,
-    damageMin: 0,
+    damageMin: 1,
     cost: 80,
     range: 2.5,
     // Upgrades
@@ -871,7 +871,7 @@ tower.random = {
             cooldownMin: 7,
             cost: 700,
             damageMax: 160,
-            damageMin: 0
+            damageMin: 1
         }
     ]
 };
