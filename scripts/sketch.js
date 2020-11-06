@@ -335,7 +335,7 @@ function loadMap() {
         var numSpawns;
         wallCover = 0.1;
         if (name[name.length - 1] === '3') {
-            cash = 65;
+            cash = 255;
             numSpawns = 3;
         } else {
             numSpawns = 2;
