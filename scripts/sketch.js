@@ -728,8 +728,8 @@ function updateInfo(t) {
     t.sellPrice();
     document.getElementById('upPrice').innerHTML = 'Upgrade price: ' +
     (t.upgrades.length > 0 ? '$' + t.upgrades[0].cost : 'N/A');
-    document.getElementById('upPrice2').innerHTML = 'Upgrade price: ' +
-    (t.upgrades.length > 0 ? '$' + t.upgrades[1].cost : 'N/A');
+    document.getElementById('upPrice2').innerHTML = 'Upgrade 2 price: ' +
+    (t.upgrades.length > 1 ? '$' + t.upgrades[1].cost : 'N/A');
     document.getElementById('damage').innerHTML = 'Damage: ' + t.getDamage();
     document.getElementById('type').innerHTML = 'Type: ' +
     t.type.toUpperCase();
