@@ -530,7 +530,7 @@ tower.tesla = {
     // Stats
     cooldownMax: 80,
     cooldownMin: 60,
-    cost: 350,
+    cost: 600,
     damageMax: 512,
     damageMin: 256,
     range: 4,
@@ -589,7 +589,7 @@ tower.tesla = {
             // Stats
             cooldownMax: 60,
             cooldownMin: 40,
-            cost: 250,
+            cost: 800,
             damageMax: 2048,
             damageMin: 1024,
             // Methods
@@ -906,3 +906,101 @@ tower.randomizer = {
     ]
 };
 
+tower.flak = {
+    // Display
+    baseOnTop: false,
+    color: [80, 80, 80],
+    follow: true,
+    hasBase: true,
+    length: 0.7,
+    radius: 1,
+    weight: 4,
+    width: 0.4,
+    secondary: [103, 128, 159],
+    // Misc
+    name: 'flak',
+    sound: 'railgun',
+    title: 'Flak Cannon',
+    // Stats
+    cooldownMax: 120,
+    cooldownMin: 100,
+    cost: 500,
+    damageMax: 150,
+    damageMin: 50,
+    range: 9,
+    type: 'explosion',
+    // Methods
+    drawBarrel: function() {
+            stroke(this.border);
+            fill(this.secondary);
+            var base = -this.length * ts;
+            var side = -this.width * ts / 2;
+            rect(base, side, this.length * ts * 2, this.width * ts);
+            fill(207, 0, 15);
+            ellipse(0, 0, this.radius * ts * 2 / 3, this.radius * ts * 2 / 3);
+        },
+            onHit: function(e) {
+                var blastRadius = 1;
+                var inRadius = getInRange(e.pos.x, e.pos.y, blastRadius, enemies);
+                noStroke();
+                fill(this.color[0], this.color[1], this.color[2], 127);
+                ellipse(e.pos.x, e.pos.y, ts * 2.5, ts * 2.5);
+                if (showEffects) {
+                    var s = new ShrapnelExplosion(e.pos.x, e.pos.y);
+                    for (var i = 0; i < particleAmt; i++) {
+                        s.addParticle();
+                    }
+                    systems.push(s);
+                }
+                for (var i = 0; i < inRadius.length; i++) {
+                    var h = inRadius[i];
+                    var amt = round(random(this.damageMin, this.damageMax));
+                    h.dealDamage(amt, this.type);
+                }
+            },
+    // Upgrades
+    upgrades: [
+        {
+            // Display
+            color: [103, 65, 114],
+            secondary: [103, 128, 159],
+            // Misc
+            name: 'flakPlus',
+            title: 'Flak Cannon Plus',
+            // Stats
+            cooldownMax: 120,
+            cooldownMin: 100,
+            cost: 600,
+            damageMax: 200,
+            damageMin: 100,
+            range: 10,
+        },
+        {
+            // Display
+            baseOnTop: false,
+            color: [103, 65, 114],
+            secondary: [103, 128, 159],
+            // Misc
+            name: 'quadCannon',
+            title: 'Quad Cannon',
+            // Stats
+            cooldownMax: 60,
+            cooldownMin: 40,
+            cost: 700,
+            damageMax: 70,
+            damageMin: 50,
+            type: 'piercing',
+            // Methods
+            drawBarrel: function() {
+                stroke(this.border);
+                fill(this.secondary);
+                var base = -this.length * ts;
+                var side = -this.width * ts / 2;
+                rect(base, side, this.length * ts * 2, this.width * ts);
+                rect(base, side, this.length * ts * 3, this.width * ts);
+                fill(207, 0, 15);
+                ellipse(0, 0, this.radius * ts * 2 / 3, this.radius * ts * 2 / 3);
+            }
+        }
+    ]
+}
