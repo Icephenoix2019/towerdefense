@@ -996,8 +996,8 @@ tower.flak = {
                 fill(this.secondary);
                 var base = -this.length * ts;
                 var side = -this.width * ts / 2;
-                rect(base * 2, side, this.length * ts * 2, this.width * ts);
-                rect(base / 2, side, this.length * ts * 2, this.width * ts);
+                rect(base * 2, side * 2, this.length * ts * 2, this.width * ts);
+                rect(base / 2, side / 2, this.length * ts * 2, this.width * ts);
                 fill(207, 0, 15);
                 ellipse(0, 0, this.radius * ts * 2 / 3, this.radius * ts * 2 / 3);
             }
