@@ -655,7 +655,7 @@ tower.bank = {
     cost: 400,
     damageMax: 0,
     damageMin: 0,
-    img: 'rainbow_bar',
+    img: 'rainbow_bar.png',
     range: 1,
     type: 'None',
     // Methods
