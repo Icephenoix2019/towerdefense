@@ -642,7 +642,7 @@ tower.bank = {
     baseOnTop: false,
     color: [175, 175, 0],
     drawLine: false,
-    length: 1.1,
+    length: 1.0,
     radius: 0.9,
     secondary: [191, 191, 191],
     width: 0.3,
@@ -655,7 +655,6 @@ tower.bank = {
     cost: 400,
     damageMax: 0,
     damageMin: 0,
-    img: 'rainbow_bar.png',
     range: 1,
     type: 'None',
     // Methods
@@ -664,7 +663,7 @@ tower.bank = {
         fill(this.secondary);
         var back = -this.length * ts / 2;
         var side = this.width * ts / 2;
-        rect(back, -side, this.length * ts, this.width * ts);
+        image('rainbow_bar', back, -side, this.length * ts, this.width * ts);
     },
     onAim: function(e) {
         this.attack(e);
