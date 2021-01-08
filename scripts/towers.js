@@ -663,7 +663,7 @@ tower.bank = {
         fill(this.secondary);
         var back = -this.length * ts / 2;
         var side = this.width * ts / 2;
-        image('rainbow_bar', back, -side, this.length * ts, this.width * ts);
+        image('img/rainbow_bar.png', back, -side, this.length * ts, this.width * ts);
     },
     onAim: function(e) {
         this.attack(e);
