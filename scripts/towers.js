@@ -644,7 +644,6 @@ tower.bank = {
     drawLine: false,
     length: 1.0,
     radius: 0.9,
-    secondary: [191, 191, 191],
     width: 0.3,
     // Misc
     name: 'bank',
@@ -660,10 +659,10 @@ tower.bank = {
     // Methods
     drawBarrel: function() {
         stroke(this.border);
-        fill(this.secondary);
         var back = -this.length * ts / 2;
         var side = this.width * ts / 2;
-        image('img/rainbow_bar', back, -side, this.length * ts, this.width * ts);
+        rect(back, -side, this.length * ts, this.width * ts);
+        context.drawImage('img/rainbow_bar', back, this.length * ts, this.width * ts);
     },
     onAim: function(e) {
         this.attack(e);
