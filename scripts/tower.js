@@ -33,6 +33,7 @@ class Tower {
         this.damageMin = 1;
         this.range = 3;
         this.totalCost = 0;
+        this.img = document.getElementById(this.towers[this.towers].src);
         this.type = 'physical';     // damage type
         this.upgrades = [];
     }
@@ -165,5 +166,5 @@ class Tower {
     // Returns array of visible entities out of passed array
     visible(entities) {
         return getInRange(this.pos.x, this.pos.y, this.range, entities);
-    }
+    }   
 }
