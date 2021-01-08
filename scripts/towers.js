@@ -661,7 +661,7 @@ tower.bank = {
         stroke(this.border);
         var back = -this.length * ts / 2;
         var side = this.width * ts / 2;
-        drawImage('img/rainbow_bar.png', back, -side, this.length * ts, this.width * ts);
+        context.drawImage('img/rainbow_bar.png', back, -side, this.length * ts, this.width * ts);
     },
     onAim: function(e) {
         this.attack(e);
