@@ -33,7 +33,6 @@ class Tower {
         this.damageMin = 1;
         this.range = 3;
         this.totalCost = 0;
-        this.img = document.getElementById(this.towers[this.towers].src);
         this.type = 'physical';     // damage type
         this.upgrades = [];
     }
